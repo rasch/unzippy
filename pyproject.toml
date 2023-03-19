@@ -1,0 +1,18 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "unzippy"
+authors = [{name = "Randy Schneck", email = "i@rasch.co"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: ISC License (ISCL)"]
+dynamic = ["version", "description"]
+keywords = ["unzip", "extract", "archive"]
+
+[project.scripts]
+unzippy = "unzippy:main"
+
+[project.urls]
+Home = "https://github.com/rasch/unzippy"

@@ -1,0 +1,22 @@
+image: alpine/edge
+packages:
+  - python3
+  - py3-pip
+  - py3-flit
+sources:
+  - https://git.sr.ht/~rasch/unzippy
+environment:
+  project: unzippy
+  FLIT_USERNAME: __token__
+secrets:
+  - b2d46c2f-c2f9-4b0d-8050-df02e9870f7d # PyPI token (FLIT_PASSWORD)
+tasks:
+  - stop_if_not_release: |
+      cd "$project"
+      git describe --exact-match HEAD || complete-build
+  - publish: |
+      cd "$project"
+      set +x
+      . ~/.env
+      set -x
+      flit publish
