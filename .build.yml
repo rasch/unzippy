@@ -9,7 +9,7 @@ environment:
   project: unzippy
   FLIT_USERNAME: __token__
 secrets:
-  - b2d46c2f-c2f9-4b0d-8050-df02e9870f7d # PyPI token (FLIT_PASSWORD)
+  - 2681cfa1-b878-4070-84d5-cc8e8e4dd529 # PyPI token (FLIT_PASSWORD)
 tasks:
   - stop_if_not_release: |
       cd "$project"
